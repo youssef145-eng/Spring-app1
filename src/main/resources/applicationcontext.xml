@@ -14,6 +14,8 @@
     <bean id="User" class="dependency_injection.User">
      <!--  <constructor-arg ref="Person"></constructor-arg>  -->
         <property name="person" ref="Person"/>
+        <property name="email" value="youssef@gmail.com"></property>
+        <property name="team" value="fc barca"></property>
     </bean>
 
 

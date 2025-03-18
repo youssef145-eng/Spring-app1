@@ -27,6 +27,6 @@ public class Main {
         UserInterface user=context.getBean("User",UserInterface.class);
 user.setPerson(new Person());
         user.getPerson();
-
+        System.out.println(user.getEmail()+" "+user.getTeam());
     }
 }
