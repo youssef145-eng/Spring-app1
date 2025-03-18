@@ -7,4 +7,14 @@
     <!-- Define a bean for the Engine class -->
    <bean id="football" class="org.example.springapp1.Basketball"></bean>
 
+
+<bean id="Person" class="dependency_injection.Person">
+
+</bean>
+    <bean id="User" class="dependency_injection.User">
+     <!--  <constructor-arg ref="Person"></constructor-arg>  -->
+        <property name="person" ref="Person"/>
+    </bean>
+
+
 </beans>
