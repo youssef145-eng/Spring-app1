@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define a bean for the Engine class -->
    <bean id="football" class="org.example.springapp1.Basketball"></bean>
@@ -14,9 +15,15 @@
     <bean id="User" class="dependency_injection.User">
      <!--  <constructor-arg ref="Person"></constructor-arg>  -->
         <property name="person" ref="Person"/>
-        <property name="email" value="youssef@gmail.com"></property>
-        <property name="team" value="fc barca"></property>
-    </bean>
+        <!--property  name="email" value="yousef174@gmail.com"></property-->
 
+        <!--property name="team" value="fc barca"></property -->
+
+        <property name="email" value="${us.email}"></property>
+
+        <property name="team" value="${us.team}"></property>
+
+    </bean>
+    <context:property-placeholder location="classpath:data.properties"/>
 
 </beans>
