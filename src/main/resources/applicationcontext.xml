@@ -12,7 +12,7 @@
 <bean id="Person" class="dependency_injection.Person">
 
 </bean>
-    <bean id="User" class="dependency_injection.User">
+    <bean id="User" class="dependency_injection.User" scope="prototype">
      <!--  <constructor-arg ref="Person"></constructor-arg>  -->
         <property name="person" ref="Person"/>
         <!--property  name="email" value="yousef174@gmail.com"></property-->
