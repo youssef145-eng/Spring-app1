@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="Annotations"></context:component-scan>
+    <!-- Define a bean for the Engine class -->
+
+    <bean id="football" class="org.example.springapp1.Basketball"></bean>
+
+
+    <bean id="Person" class="dependency_injection.Person">
+
+    </bean>
+    <bean id="User" class="dependency_injection.User" scope="singleton"
+          init-method="doStart"
+          destroy-method="doEnd"
+
+
+    >
+
+        <!--  <constructor-arg ref="Person"></constructor-arg>  -->
+        <property name="person" ref="Person"/>
+        <!--property  name="email" value="yousef174@gmail.com"></property-->
+
+        <!--property name="team" value="fc barca"></property -->
+
+        <property name="email" value="${us.email}"></property>
+
+        <property name="team" value="${us.team}"></property>
+
+    </bean>
+
+    <context:property-placeholder location="classpath:data.properties"/>
+
+</beans>

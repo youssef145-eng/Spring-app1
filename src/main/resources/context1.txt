@@ -10,28 +10,26 @@
     <!-- Enable component scanning for Spring to automatically detect beans in the specified package -->
     <context:component-scan base-package="Annotations"></context:component-scan>
 
-    <!-- Disable the Basketball bean -->
-    <!--
+    <!-- Define a bean for the Basketball class with the ID "football" -->
     <bean id="football" class="org.example.springapp1.Basketball"></bean>
-    -->
 
-    <!-- Disable the Person bean -->
-    <!--
+    <!-- Define a bean for the Person class -->
     <bean id="Person" class="dependency_injection.Person"></bean>
-    -->
 
-    <!-- Disable the User bean -->
-    <!--
+    <!-- Define a bean for the User class -->
     <bean id="User" class="dependency_injection.User" scope="singleton"
-          init-method="doStart"
-          destroy-method="doEnd">
+          init-method="doStart"   <!-- Method to be called when the bean is initialized -->
+          destroy-method="doEnd"  <!-- Method to be called when the bean is destroyed -->
+    >
+        <!-- Inject the Person bean into the User bean -->
         <property name="person" ref="Person"/>
+
+        <!-- Inject email and team values from an external properties file -->
         <property name="email" value="${us.email}"/>
         <property name="team" value="${us.team}"/>
     </bean>
-    -->
 
-    <!-- Load properties from an external file (still active) -->
+    <!-- Load properties from an external file (data.properties) -->
     <context:property-placeholder location="classpath:data.properties"/>
 
 </beans>
