@@ -22,8 +22,12 @@ public class Main {
         user.getPerson();
 
          */
-        ApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+  //      ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+//        context.close(); // ❌ Error: No close() method in ApplicationContext
+
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("applicationcontext.xml");
+
 
         UserInterface user=context.getBean("User",UserInterface.class);
         UserInterface user2=context.getBean("User",UserInterface.class);
@@ -31,5 +35,7 @@ user.setPerson(new Person());
         user.getPerson();
         System.out.println(user.getEmail()+" "+user.getTeam());
         System.out.println(user+"  "+user2);
+
+context.close();
     }
 }
