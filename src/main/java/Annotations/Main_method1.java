@@ -13,6 +13,7 @@ public class Main_method1 {
 
 Masterinterface master=context.getBean("master",Masterinterface.class);
 master.name();
+master.callmysport();
 context.close();
 
 

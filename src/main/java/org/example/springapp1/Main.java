@@ -13,7 +13,7 @@ public class Main {
         //football.start();
         /*
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationcontext.xml");
+                 new ClassPathXmlApplicationContext("applicationcontext.xml");
         Sport football = context.getBean("football", Sport.class);
         football.start();
         context.close();
