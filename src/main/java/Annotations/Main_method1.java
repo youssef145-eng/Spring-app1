@@ -19,6 +19,8 @@ master.callmysport();
 
 Company client1=context.getBean("client",Company.class);
         Company client2=context.getBean("client",Company.class);
+        Company user=context.getBean("user",Company.class);
        System.out.println(client1==client2);
+       context.close();
     }
 }
