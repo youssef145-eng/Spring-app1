@@ -14,10 +14,11 @@ public class Main_method1 {
 Masterinterface master=context.getBean("master",Masterinterface.class);
 master.name();
 master.callmysport();
-context.close();
+//context.close();
 
 
-
-
+Company client1=context.getBean("client",Company.class);
+        Company client2=context.getBean("client",Company.class);
+       System.out.println(client1==client2);
     }
 }
