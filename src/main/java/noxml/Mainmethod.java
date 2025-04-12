@@ -15,6 +15,9 @@ public class Mainmethod {
         car.type();
         MotoCycle m1=context.getBean("motoCycle",MotoCycle.class);
         m1.moto();
+        YoussefData y1=context.getBean("youssefData",YoussefData.class);
+        System.out.println( y1.getEmail());
+        System.out.println(y1.getTeam());
         context.close();
     }
 }
